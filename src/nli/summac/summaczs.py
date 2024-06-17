@@ -35,7 +35,7 @@ class SummaCZS:
 
 if __name__ == "__main__":
 
-    from nli.summac.base import SummaCImager
+    from nli.summac.base import SummaCImagerForNLI
 
     document = """Scientists are studying Mars to learn about the Red Planet and find landing sites for future missions.
     One possible site, known as Arcadia Planitia, is covered instrange sinuous features.
@@ -45,7 +45,7 @@ if __name__ == "__main__":
     summary2 = "There are strange shape patterns on Arcadia Planitia. The shapes could indicate the area might be made of glaciers."
 
     model_name_or_path="tals/albert-xlarge-vitaminc-mnli"
-    imager = SummaCImager(model_name_or_path)
+    imager = SummaCImagerForNLI(model_name_or_path)
     probs, image = imager.build_image(document, summary, batch_size=8, return_dict_or_matrix='dict')
     print(f'image shape: {image.shape}')
     print(f'image: {image}')

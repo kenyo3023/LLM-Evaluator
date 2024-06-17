@@ -28,7 +28,7 @@ class SplitGranularity:
     sentence  :str = ChunkSplitter.split_to_sentence
 
 
-class SummaCImager:
+class SummaCImagerForNLI:
     def __init__(self,
                  model_name_or_path:str="tals/albert-xlarge-vitaminc-mnli",
                  document_granularity:SplitGranularity="sentence",
@@ -142,7 +142,7 @@ if __name__ == "__main__":
     summary2 = "There are strange shape patterns on Arcadia Planitia. The shapes could indicate the area might be made of glaciers."
 
     model_name_or_path="tals/albert-xlarge-vitaminc-mnli"
-    imager = SummaCImager(model_name_or_path)
+    imager = SummaCImagerForNLI(model_name_or_path)
     probs, image = imager.build_image(document, summary, batch_size=8, return_dict_or_matrix='dict')
     print(f'image shape: {image.shape}')
     print(f'image: {image}')
