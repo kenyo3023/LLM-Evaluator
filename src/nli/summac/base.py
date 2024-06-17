@@ -33,10 +33,8 @@ class SummaCImagerForNLI:
                  model_name_or_path:str="tals/albert-xlarge-vitaminc-mnli",
                  document_granularity:SplitGranularity="sentence",
                  summary_granularity:SplitGranularity="sentence",
-                 use_cache=True,
                  max_doc_sents=100,
-                 device="cpu",
-                 **kwargs):
+                 device="cpu"):
 
         self.device = device
         self.model_name_or_path = model_name_or_path
