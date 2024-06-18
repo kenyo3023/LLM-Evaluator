@@ -4,5 +4,5 @@ __pycache__
 # *.bin
 *.bin
 
+# # *.ipynb
 # *.ipynb
-*.ipynb
